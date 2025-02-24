@@ -12,7 +12,7 @@ S.ProductPhotoWrapper = styled.div`
     & div{
         width: 340px;
         height: 240px;
-        background-color: gray;
+        background-color: #eeeeee;
         border-radius: 10px;
     }
 

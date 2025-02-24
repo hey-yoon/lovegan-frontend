@@ -11,11 +11,12 @@ const ItemContainer = ({ title, description, price,star,review, onNavigate, phot
     const toggleLike = () => setLike(!like);
 
     return (
+        <>
         <S.ItemContainer>
             <div className="mainPhotoWrapper">
                 <div>
                     <img 
-                        src={photoId?.url}
+                        src={Array.isArray(photoId) && photoId.length > 0 ? photoId[0]?.url : '기본이미지.png'}
                         alt="상품이미지"
                         style={{width:"340px",height: "240px",borderRadius: "10px"}}
                     />
@@ -35,6 +36,7 @@ const ItemContainer = ({ title, description, price,star,review, onNavigate, phot
                 </S.ItemStar>
             </div>
         </S.ItemContainer>
+        </>
     );
 };
 export default ItemContainer;
