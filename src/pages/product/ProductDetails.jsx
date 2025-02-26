@@ -26,12 +26,22 @@ const ProductDetails = () => {
         const response = await fetch(`http://localhost:8000/product/post?id=${productId}`)
         const datas = await response.json();
         setProducts(datas);
-    
+        console.log("datas",datas)
     }
 
     useEffect(()=>{
         getProduct()
     },[])
+
+    useEffect(() => {
+        console.log("현재 products:", products);
+        console.log("products.photoId:", products?.photoId);
+        console.log("products.photoId[0]:", products?.photoId?.[0]);
+        console.log("products.photoId[0].url:", products?.photoId?.[0]?.url);
+        // console.log(typeof products.photoId[0]);
+    }, [products]);
+    
+
     
     
     const toggleLike = () => setLike(!like);
@@ -45,15 +55,15 @@ const ProductDetails = () => {
                 <S.DetailMainWrapper>
                     <S.ImgWrapper>
                         <S.MainImgWrapper>
-                            <img src={MainPic} alt="" />
+                            <img src={products?.photoId?.[0]?.url || '기본이미지.png'} alt="메인 이미지" />
                         </S.MainImgWrapper>
                         <S.SubImgWrapper>
-                            <img src={MainSubPic}></img>
-                            <img src={SubPic}></img>
-                            <img src={SubPic}></img>
-                           <img src={SubPic}></img>
-                            <img src={SubPic}></img>
-                            <img src={SubPic}></img>
+                            <div><img src=""></img></div>
+                            <div><img src=""></img></div>
+                            <div><img src=""></img></div>
+                            <div><img src=""></img></div>
+                            <div><img src=""></img></div>
+                            <div><img src=""></img></div>
                         </S.SubImgWrapper>
                     
                     </S.ImgWrapper>

@@ -871,6 +871,7 @@ S.TagContainer = styled.div`
 S.MainImgWrapper = styled.div`
     width: 640px;
     height: 640px;
+    background-color: #eeeeee;
     & img{
         width: 640px;
         height: 640px;
@@ -883,11 +884,13 @@ S.SubImgWrapper = styled.div`
     display: flex;
     margin-top: 18px;
 
-    & img{
+    & div{
         
         width: 100px;
         height: 100px;
         margin-right: 8px;
+        background-color: #eeeeee;
+        border-radius: 5px;
     }
 
 
