@@ -58,7 +58,7 @@ const OtherMain = () => {
         </S.ProductHeader> 
 
         <S.ProductMainContainer>   
-        {postData(products).map((product) => (
+        {Array.isArray(products) && postData(products).map((product) => (
             <S.ItemContainerWrapper key={product._id}>
                 <React.Fragment >
                 <ItemContainer3 photoId={product.photoId} />

@@ -15,11 +15,10 @@ const ItemContainer3 = ({photoId}) => {
 
     return (
     <>    
-        {Array.isArray(photoId) && photoId?.length > 0 && (
         <S.ProductPhotoWrapper>
             <div>
                 <img 
-                    src={photoId[0]?.url}
+                    src={Array.isArray(photoId) && photoId.length > 0 ? photoId[0]?.url : '기본이미지.png'}
                     alt="상품이미지"
                     style={{width:"340px",height: "240px",borderRadius: "10px"}}
                 />
@@ -29,8 +28,7 @@ const ItemContainer3 = ({photoId}) => {
                 src={like ? LikeClick : Like}
                 alt="하트"
             />
-        </S.ProductPhotoWrapper>        
-    )}  
+        </S.ProductPhotoWrapper>
     
     </>
     );
